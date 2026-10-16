@@ -1,0 +1,6 @@
+/.lake/
+/verification/latest/
+__pycache__/
+*.olean
+*.ilean
+*.ir

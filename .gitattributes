@@ -1,0 +1,7 @@
+*.lean -text
+*.pdf binary
+*.md text eol=lf
+*.py text eol=lf
+*.json -text
+*.toml text eol=lf
+*.tex text eol=lf
