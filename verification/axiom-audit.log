@@ -1,0 +1,187 @@
+def Erdos319Formal.Primitive : Finset ℕ → Prop :=
+fun A => ∃ δ, Erdos319Formal.signedSum A δ = 0 ∧ ∀ C ⊆ A, Erdos319Formal.signedSum C δ = 0 → C = ∅ ∨ C = A
+def Erdos319Formal.maxSize : ℕ → ℕ :=
+fun N => (Finset.filter Erdos319Formal.Primitive (Finset.Icc 1 N).powerset).sup Finset.card
+theorem Erdos319Formal.erdos_problem_319_limit : Filter.Tendsto (fun N => ↑(Erdos319Formal.maxSize N) / ↑N) Filter.atTop
+  (nhds 1) :=
+Erdos319Formal.erdos_problem_319
+Erdos319Formal.erdos_problem_319_witnesses (ε : ℝ) :
+  0 < ε →
+    ∀ᶠ (N : ℕ) in Filter.atTop,
+      ∃ A ⊆ Finset.Icc 1 N,
+        ∃ δ,
+          (∀ (n : ℕ), δ n = 1 ∨ δ n = -1) ∧
+            ∑ n ∈ A, ↑(δ n) / ↑n = 0 ∧ (∀ C ⊆ A, C ≠ ∅ → C ≠ A → ∑ n ∈ C, ↑(δ n) / ↑n ≠ 0) ∧ (1 - ε) * ↑N ≤ ↑A.card
+def Erdos319Submission.LiteralPrimitive : Finset ℕ → Prop :=
+fun A =>
+  ∃ δ, (∀ (n : ℕ), δ n = 1 ∨ δ n = -1) ∧ ∑ n ∈ A, ↑(δ n) / ↑n = 0 ∧ ∀ C ⊂ A, C.Nonempty → ∑ n ∈ C, ↑(δ n) / ↑n ≠ 0
+Erdos319Submission.literal_maximum (N : ℕ) :
+  IsGreatest {k | ∃ A ⊆ Finset.Icc 1 N, Erdos319Submission.LiteralPrimitive A ∧ A.card = k} (Erdos319Formal.maxSize N)
+Erdos319Submission.original_problem_nonempty_witnesses (ε : ℝ) :
+  0 < ε →
+    ε < 1 →
+      ∀ᶠ (N : ℕ) in Filter.atTop,
+        ∃ A ⊆ Finset.Icc 1 N, A.Nonempty ∧ Erdos319Submission.LiteralPrimitive A ∧ (1 - ε) * ↑N ≤ ↑A.card
+'Erdos319Formal.coreAmplification_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.primitive_union_of_minimalCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.fullAsymptotic_of_windowDenseExpansions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.complement_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.weighted_fourier_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.bernoulli_phase_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.selectionMass_abs_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exact_subset_of_fourier_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.centered_major_re_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.fourier_lower_bound_of_large_frequency_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exact_subset_of_large_frequency_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.fourierTerm_norm_le_group_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.clean_divisor_groups' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_major_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_middle_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.prime_power_cleanup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.divisor_class_survives_small_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.divisor_dvd_lcm_of_primePower_classes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_primePower_reciprocal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_primePower_cleanup_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_prime_power_cleaning_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.cleaning_preserves_reciprocal_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_divisor_class_survives' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_denominator_dvd_cleaned_lcm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.cleaning_preserves_card_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_primePowerTail_smoothCutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.nonsmooth_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_smooth_cleaning_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.primePowerMultiplicity_first_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_regular_cleaning_sequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.smooth_lcm_le_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_smooth_lcm_fourier_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.coprimePrefix_card_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_coprime_harmonic_correction_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_coprimeWindow_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_coprimeWindow_reciprocal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.coprimeWindow_divisor_card_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.coprimeWindow_divisor_mass_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_regular_coprimeWindow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.finite_brun_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.finite_prime_sieve_upper_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.missing_primes_reciprocal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eq_of_dense_prime_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.packet_nearby_multiple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.factored_reciprocal_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.factored_reciprocal_sum_le_euler_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_scaled_fiber_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.sieve_remainder_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_factored_fiber_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.roughCofactor_scaled_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.primeFactor_length_le_primePower_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.primeFactor_length_le_primePowerMultiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.roughCofactor_scaled_bounds_of_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.cofactor_packet_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.sifted_quotient_reciprocal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.roughCofactor_image_reciprocal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_euler_ratio_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.extract_rough_divisor_packet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.extract_nearby_dense_cofactor_packet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.common_nearby_multiple_of_dense_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exists_uniform_primeBand_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_sieveLevel_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationPrimeLower_power_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localization_medium_sift_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationCommon_sieve_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localization_sieve_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_extract_nearby_dense_cofactor_packet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos319Formal.good_residue_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationPacketDensity_log_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'prime_power_reciprocal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.quotient_injective_on_divisibles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.reciprocalSum_image_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.quotient_packet_subset_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.sifted_quotient_card_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.uniform_sieve_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.short_interval_difference_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.primeBand_reciprocal_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_prime_mertens_error_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.primeBand_sift_factor_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.sieveLevel_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.sieveLevel_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.sieveLevel_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.log_floor_exp_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_loglog_pow_div_localizationPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_localizationPower_div_loglog_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_localizationRoughBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_localizationMediumBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_localizationCommonBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_sieveLevel_le_loglog_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.floor_exp_pow_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.floor_exp_le_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationRough_log_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationRough_power_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationRoughBound_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationMedium_Rough_ratio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationRough_q_sieve_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_loglog_pow_mul_exp_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_loglog_pow_mul_exp_neg_localizationPower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos319Formal.tendsto_localizationSieveLoss_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationWidth_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationPacketDensity_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_loglog_linear_sub_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_localizationPrimeLower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationPrimeLower_loglog_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.localizationCommon_loglog_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationCommonBand_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationCommonBand_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationCommonBand_support_mass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos319Formal.exp_neg_le_density_quarter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationCommonBand_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exp_quarter_le_density_floor_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationCommonBand_count_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos319Formal.localizationWidth_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_common_nearby_multiple_of_packets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_divisor_localization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_log_pow_mul_exp_neg_localizationPower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos319Formal.tendsto_log_pow_loglog_pow_exp_neg_localizationPower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Erdos319Formal.localizationRarity_scaled_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_localizationRarity_cost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_rare_divisor_localization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.card_frequencies_of_residue_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.residue_cover_of_near_multiple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.card_frequencies_near_multiples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.nat_lcm_dvd_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.divisorPrimePowers_lcm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.lcm_complement_quotient_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.card_localized_frequency_class' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.no_large_frequency_with_full_lcm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.exp_sub_one_le_mul_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.nonempty_powerset_weight_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.frequency_sum_of_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_nat_pow_exp_neg_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.tendsto_classificationMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.frequency_sum_le_classificationMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_frequency_sum_of_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_rareDivisorSet_localization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.bad_residue_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.fourierTerm_norm_of_many_bad_groups' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_large_frequency_bound_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_exact_subset_regular_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.eventually_complement_regular_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.windowDenseExpansions_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.erdos_problem_319' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.erdos_problem_319_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Formal.erdos_problem_319_witnesses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Submission.literalPrimitive_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Submission.literal_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Submission.original_problem_density_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos319Submission.original_problem_nonempty_witnesses' depends on axioms: [propext, Classical.choice, Quot.sound]

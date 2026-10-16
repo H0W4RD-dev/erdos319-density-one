@@ -1,0 +1,33 @@
+{
+  "proof_commit": "ed555ed4120225800a6c642e6ba81704d5ed6b11",
+  "inputs": {
+    "Erdos319.lean": {
+      "sha256": "d6c4e9dc6e3cfcbf60beb9881b4bcb0cbea4887314968b5952cce8ea2ca07e23",
+      "matches_selected_git_object": true
+    },
+    "Submission.lean": {
+      "sha256": "9c7e5d6d5b5fa5cc294997673d566ea6030b6b99f360f92efc2b0b70dde7848d",
+      "matches_selected_git_object": true
+    },
+    "Audit.lean": {
+      "sha256": "3ec16d500366dad43614530b3347ce174e71dcf02d7bc19976a412698d38a93f",
+      "matches_selected_git_object": true
+    },
+    "lean-toolchain": {
+      "sha256": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+      "matches_selected_git_object": true
+    },
+    "lakefile.toml": {
+      "sha256": "d2c7469d16b7502a0224df766ca9023fc1e2db2a8ae4622096911c20994de2b0",
+      "matches_selected_git_object": true
+    },
+    "lake-manifest.json": {
+      "sha256": "7c70a723cd4b9d15bb54abd203921a91799a1d77cc544d0497b679246e45b488",
+      "matches_selected_git_object": true
+    },
+    "audit-targets.json": {
+      "sha256": "7689413cc20c8dc4d8179bf1fcbf6dc658c50f3ccb3539615e27eae7ebe7da2a",
+      "matches_selected_git_object": true
+    }
+  }
+}

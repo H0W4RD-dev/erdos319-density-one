@@ -1,0 +1,1053 @@
+{
+  "started_utc": "2026-10-16T14:30:03.512356+00:00",
+  "kind": "author self-check; not independent human review or award approval",
+  "commands": [
+    {
+      "name": "lean-version",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 7.328000000008615,
+      "log": "lean-version.log"
+    },
+    {
+      "name": "lake-version",
+      "command": [
+        "lake",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.21899999999732245,
+      "log": "lake-version.log"
+    },
+    {
+      "name": "proof-build",
+      "command": [
+        "lake",
+        "build",
+        "Erdos319",
+        "Submission"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 243.875,
+      "log": "proof-build.log"
+    },
+    {
+      "name": "axiom-audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "Audit.lean"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 91.125,
+      "log": "axiom-audit.log"
+    },
+    {
+      "name": "kernel-replay-Erdos319",
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "--verbose",
+        "Erdos319"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 95.46899999999732,
+      "log": "kernel-replay-Erdos319.log"
+    },
+    {
+      "name": "kernel-replay-Submission",
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "--verbose",
+        "Submission"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 78.65600000000268,
+      "log": "kernel-replay-Submission.log"
+    }
+  ],
+  "source_sha256": {
+    "Erdos319.lean": "d6c4e9dc6e3cfcbf60beb9881b4bcb0cbea4887314968b5952cce8ea2ca07e23",
+    "Submission.lean": "9c7e5d6d5b5fa5cc294997673d566ea6030b6b99f360f92efc2b0b70dde7848d",
+    "Audit.lean": "3ec16d500366dad43614530b3347ce174e71dcf02d7bc19976a412698d38a93f",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "lakefile.toml": "d2c7469d16b7502a0224df766ca9023fc1e2db2a8ae4622096911c20994de2b0",
+    "lake-manifest.json": "7c70a723cd4b9d15bb54abd203921a91799a1d77cc544d0497b679246e45b488",
+    "audit-targets.json": "7689413cc20c8dc4d8179bf1fcbf6dc658c50f3ccb3539615e27eae7ebe7da2a"
+  },
+  "expected_axiom_targets": [
+    "Erdos319Formal.bad_residue_energy",
+    "Erdos319Formal.bernoulli_phase_contraction",
+    "Erdos319Formal.card_frequencies_near_multiples",
+    "Erdos319Formal.card_frequencies_of_residue_cover",
+    "Erdos319Formal.card_localized_frequency_class",
+    "Erdos319Formal.centered_major_re_nonneg",
+    "Erdos319Formal.clean_divisor_groups",
+    "Erdos319Formal.cleaning_preserves_card_density",
+    "Erdos319Formal.cleaning_preserves_reciprocal_limit",
+    "Erdos319Formal.cofactor_packet_density",
+    "Erdos319Formal.common_nearby_multiple_of_dense_packets",
+    "Erdos319Formal.complement_expansion",
+    "Erdos319Formal.coprimePrefix_card_error",
+    "Erdos319Formal.coprimeWindow_divisor_card_lower",
+    "Erdos319Formal.coprimeWindow_divisor_mass_positive",
+    "Erdos319Formal.coreAmplification_proved",
+    "Erdos319Formal.divisorPrimePowers_lcm",
+    "Erdos319Formal.divisor_class_survives_small_loss",
+    "Erdos319Formal.divisor_dvd_lcm_of_primePower_classes",
+    "Erdos319Formal.eq_of_dense_prime_support",
+    "Erdos319Formal.erdos_problem_319",
+    "Erdos319Formal.erdos_problem_319_limit",
+    "Erdos319Formal.erdos_problem_319_witnesses",
+    "Erdos319Formal.eventually_common_nearby_multiple_of_packets",
+    "Erdos319Formal.eventually_complement_regular_family",
+    "Erdos319Formal.eventually_denominator_dvd_cleaned_lcm",
+    "Erdos319Formal.eventually_divisor_class_survives",
+    "Erdos319Formal.eventually_divisor_localization",
+    "Erdos319Formal.eventually_exact_subset_regular_family",
+    "Erdos319Formal.eventually_extract_nearby_dense_cofactor_packet",
+    "Erdos319Formal.eventually_frequency_sum_of_classification",
+    "Erdos319Formal.eventually_large_frequency_bound_regular",
+    "Erdos319Formal.eventually_localizationCommonBand_count_error",
+    "Erdos319Formal.eventually_localizationCommonBand_endpoints",
+    "Erdos319Formal.eventually_localizationCommonBand_mass",
+    "Erdos319Formal.eventually_localizationCommonBand_support_mass",
+    "Erdos319Formal.eventually_localizationCommonBand_tail",
+    "Erdos319Formal.eventually_localizationPacketDensity_log_bound",
+    "Erdos319Formal.eventually_localizationRarity_cost",
+    "Erdos319Formal.eventually_localizationRoughBound_le",
+    "Erdos319Formal.eventually_localization_medium_sift_bound",
+    "Erdos319Formal.eventually_localization_sieve_loss",
+    "Erdos319Formal.eventually_major_parameters",
+    "Erdos319Formal.eventually_middle_parameters",
+    "Erdos319Formal.eventually_primePower_reciprocal_bound",
+    "Erdos319Formal.eventually_rareDivisorSet_localization",
+    "Erdos319Formal.eventually_rare_divisor_localization",
+    "Erdos319Formal.eventually_sieveLevel_le_loglog_sq",
+    "Erdos319Formal.eventually_sieveLevel_tail_bound",
+    "Erdos319Formal.eventually_smooth_lcm_fourier_growth",
+    "Erdos319Formal.exact_subset_of_fourier_interval",
+    "Erdos319Formal.exact_subset_of_large_frequency_bound",
+    "Erdos319Formal.exists_coprime_harmonic_correction_limit",
+    "Erdos319Formal.exists_euler_ratio_log_bound",
+    "Erdos319Formal.exists_factored_fiber_mass",
+    "Erdos319Formal.exists_prime_power_cleaning_sequence",
+    "Erdos319Formal.exists_regular_cleaning_sequence",
+    "Erdos319Formal.exists_regular_coprimeWindow",
+    "Erdos319Formal.exists_scaled_fiber_mass",
+    "Erdos319Formal.exists_smooth_cleaning_sequence",
+    "Erdos319Formal.exists_uniform_primeBand_error",
+    "Erdos319Formal.exp_neg_le_density_quarter",
+    "Erdos319Formal.exp_quarter_le_density_floor_exp",
+    "Erdos319Formal.exp_sub_one_le_mul_exp",
+    "Erdos319Formal.extract_nearby_dense_cofactor_packet",
+    "Erdos319Formal.extract_rough_divisor_packet",
+    "Erdos319Formal.factored_reciprocal_hasSum",
+    "Erdos319Formal.factored_reciprocal_sum_le_euler_ratio",
+    "Erdos319Formal.finite_brun_upper_bound",
+    "Erdos319Formal.finite_prime_sieve_upper_exp",
+    "Erdos319Formal.floor_exp_le_nat",
+    "Erdos319Formal.floor_exp_pow_le",
+    "Erdos319Formal.fourierTerm_norm_le_group_energy",
+    "Erdos319Formal.fourierTerm_norm_of_many_bad_groups",
+    "Erdos319Formal.fourier_lower_bound_of_large_frequency_bound",
+    "Erdos319Formal.frequency_sum_le_classificationMajorant",
+    "Erdos319Formal.frequency_sum_of_classification",
+    "Erdos319Formal.fullAsymptotic_of_windowDenseExpansions",
+    "Erdos319Formal.good_residue_mass",
+    "Erdos319Formal.lcm_complement_quotient_bound",
+    "Erdos319Formal.localizationCommon_loglog_lower",
+    "Erdos319Formal.localizationCommon_sieve_cost",
+    "Erdos319Formal.localizationMedium_Rough_ratio_bound",
+    "Erdos319Formal.localizationPacketDensity_log",
+    "Erdos319Formal.localizationPrimeLower_loglog_upper",
+    "Erdos319Formal.localizationPrimeLower_power_gt",
+    "Erdos319Formal.localizationRarity_scaled_cost",
+    "Erdos319Formal.localizationRough_log_bounds",
+    "Erdos319Formal.localizationRough_power_bound",
+    "Erdos319Formal.localizationRough_q_sieve_cost",
+    "Erdos319Formal.localizationWidth_le",
+    "Erdos319Formal.localizationWidth_size",
+    "Erdos319Formal.log_floor_exp_bounds",
+    "Erdos319Formal.missing_primes_reciprocal_bound",
+    "Erdos319Formal.nat_lcm_dvd_int",
+    "Erdos319Formal.no_large_frequency_with_full_lcm",
+    "Erdos319Formal.nonempty_powerset_weight_bound",
+    "Erdos319Formal.nonsmooth_card_bound",
+    "Erdos319Formal.packet_nearby_multiple",
+    "Erdos319Formal.primeBand_reciprocal_eq",
+    "Erdos319Formal.primeBand_sift_factor_bound",
+    "Erdos319Formal.primeFactor_length_le_primePowerMultiplicity",
+    "Erdos319Formal.primeFactor_length_le_primePower_count",
+    "Erdos319Formal.primePowerMultiplicity_first_moment",
+    "Erdos319Formal.prime_power_cleanup",
+    "Erdos319Formal.primitive_union_of_minimalCore",
+    "Erdos319Formal.quotient_injective_on_divisibles",
+    "Erdos319Formal.quotient_packet_subset_prefix",
+    "Erdos319Formal.reciprocalSum_image_div",
+    "Erdos319Formal.residue_cover_of_near_multiple",
+    "Erdos319Formal.roughCofactor_image_reciprocal_bound",
+    "Erdos319Formal.roughCofactor_scaled_bounds",
+    "Erdos319Formal.roughCofactor_scaled_bounds_of_multiplicity",
+    "Erdos319Formal.selectionMass_abs_uniform",
+    "Erdos319Formal.short_interval_difference_lt",
+    "Erdos319Formal.sieveLevel_lower",
+    "Erdos319Formal.sieveLevel_tail_bound",
+    "Erdos319Formal.sieveLevel_upper",
+    "Erdos319Formal.sieve_remainder_budget",
+    "Erdos319Formal.sifted_quotient_card_bound",
+    "Erdos319Formal.sifted_quotient_reciprocal_bound",
+    "Erdos319Formal.smooth_lcm_le_exp",
+    "Erdos319Formal.tendsto_classificationMajorant",
+    "Erdos319Formal.tendsto_coprimeWindow_density",
+    "Erdos319Formal.tendsto_coprimeWindow_reciprocal",
+    "Erdos319Formal.tendsto_localizationCommonBound",
+    "Erdos319Formal.tendsto_localizationMediumBound",
+    "Erdos319Formal.tendsto_localizationPower_div_loglog_pow",
+    "Erdos319Formal.tendsto_localizationPrimeLower",
+    "Erdos319Formal.tendsto_localizationRoughBound",
+    "Erdos319Formal.tendsto_localizationSieveLoss_scaled",
+    "Erdos319Formal.tendsto_log_pow_loglog_pow_exp_neg_localizationPower",
+    "Erdos319Formal.tendsto_log_pow_mul_exp_neg_localizationPower",
+    "Erdos319Formal.tendsto_loglog_linear_sub_log",
+    "Erdos319Formal.tendsto_loglog_pow_div_localizationPower",
+    "Erdos319Formal.tendsto_loglog_pow_mul_exp_neg",
+    "Erdos319Formal.tendsto_loglog_pow_mul_exp_neg_localizationPower",
+    "Erdos319Formal.tendsto_nat_pow_exp_neg_log",
+    "Erdos319Formal.tendsto_primePowerTail_smoothCutoff",
+    "Erdos319Formal.tendsto_primePower_cleanup_budget",
+    "Erdos319Formal.tendsto_prime_mertens_error_nat",
+    "Erdos319Formal.uniform_sieve_remainder",
+    "Erdos319Formal.weighted_fourier_identity",
+    "Erdos319Formal.windowDenseExpansions_proved",
+    "Erdos319Submission.literalPrimitive_iff",
+    "Erdos319Submission.literal_maximum",
+    "Erdos319Submission.original_problem_density_one",
+    "Erdos319Submission.original_problem_nonempty_witnesses",
+    "prime_power_reciprocal"
+  ],
+  "expected_mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "kernel_replay_requested": true,
+  "dependency_revisions": [
+    {
+      "name": "mathlib",
+      "expected": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+      "actual": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+    },
+    {
+      "name": "plausible",
+      "expected": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912",
+      "actual": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912"
+    },
+    {
+      "name": "LeanSearchClient",
+      "expected": "95e037bfdc31d3916ac615446847fb01960e2719",
+      "actual": "95e037bfdc31d3916ac615446847fb01960e2719"
+    },
+    {
+      "name": "importGraph",
+      "expected": "10930f8138f0462dbd744a91fc03a16fae0e046f",
+      "actual": "10930f8138f0462dbd744a91fc03a16fae0e046f"
+    },
+    {
+      "name": "proofwidgets",
+      "expected": "4c70ac059693669e5756e32a7a94b57ee1e99dc5",
+      "actual": "4c70ac059693669e5756e32a7a94b57ee1e99dc5"
+    },
+    {
+      "name": "aesop",
+      "expected": "75d936c7af167cc93fac0d31237682fc2204591d",
+      "actual": "75d936c7af167cc93fac0d31237682fc2204591d"
+    },
+    {
+      "name": "Qq",
+      "expected": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334",
+      "actual": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334"
+    },
+    {
+      "name": "batteries",
+      "expected": "ed9b316aabe389fec1ef43c3326ab48c7e59be42",
+      "actual": "ed9b316aabe389fec1ef43c3326ab48c7e59be42"
+    },
+    {
+      "name": "Cli",
+      "expected": "2842b9871b04862f944c032e34052cb9448ccb71",
+      "actual": "2842b9871b04862f944c032e34052cb9448ccb71"
+    }
+  ],
+  "axiom_dependencies": {
+    "Erdos319Formal.coreAmplification_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.primitive_union_of_minimalCore": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.fullAsymptotic_of_windowDenseExpansions": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.complement_expansion": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.weighted_fourier_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.bernoulli_phase_contraction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.selectionMass_abs_uniform": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exact_subset_of_fourier_interval": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.centered_major_re_nonneg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.fourier_lower_bound_of_large_frequency_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exact_subset_of_large_frequency_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.fourierTerm_norm_le_group_energy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.clean_divisor_groups": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_major_parameters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_middle_parameters": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.prime_power_cleanup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.divisor_class_survives_small_loss": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.divisor_dvd_lcm_of_primePower_classes": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_primePower_reciprocal_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_primePower_cleanup_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_prime_power_cleaning_sequence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.cleaning_preserves_reciprocal_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_divisor_class_survives": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_denominator_dvd_cleaned_lcm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.cleaning_preserves_card_density": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_primePowerTail_smoothCutoff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.nonsmooth_card_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_smooth_cleaning_sequence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.primePowerMultiplicity_first_moment": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_regular_cleaning_sequence": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.smooth_lcm_le_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_smooth_lcm_fourier_growth": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.coprimePrefix_card_error": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_coprime_harmonic_correction_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_coprimeWindow_density": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_coprimeWindow_reciprocal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.coprimeWindow_divisor_card_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.coprimeWindow_divisor_mass_positive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_regular_coprimeWindow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.finite_brun_upper_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.finite_prime_sieve_upper_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.missing_primes_reciprocal_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eq_of_dense_prime_support": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.packet_nearby_multiple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.factored_reciprocal_hasSum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.factored_reciprocal_sum_le_euler_ratio": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_scaled_fiber_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.sieve_remainder_budget": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_factored_fiber_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.roughCofactor_scaled_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.primeFactor_length_le_primePower_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.primeFactor_length_le_primePowerMultiplicity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.roughCofactor_scaled_bounds_of_multiplicity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.cofactor_packet_density": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.sifted_quotient_reciprocal_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.roughCofactor_image_reciprocal_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_euler_ratio_log_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.extract_rough_divisor_packet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.extract_nearby_dense_cofactor_packet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.common_nearby_multiple_of_dense_packets": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exists_uniform_primeBand_error": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_sieveLevel_tail_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationPrimeLower_power_gt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localization_medium_sift_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationCommon_sieve_cost": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localization_sieve_loss": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_extract_nearby_dense_cofactor_packet": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.good_residue_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationPacketDensity_log_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "prime_power_reciprocal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.quotient_injective_on_divisibles": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.reciprocalSum_image_div": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.quotient_packet_subset_prefix": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.sifted_quotient_card_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.uniform_sieve_remainder": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.short_interval_difference_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.primeBand_reciprocal_eq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_prime_mertens_error_nat": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.primeBand_sift_factor_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.sieveLevel_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.sieveLevel_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.sieveLevel_tail_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.log_floor_exp_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_loglog_pow_div_localizationPower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_localizationPower_div_loglog_pow": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_localizationRoughBound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_localizationMediumBound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_localizationCommonBound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_sieveLevel_le_loglog_sq": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.floor_exp_pow_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.floor_exp_le_nat": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationRough_log_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationRough_power_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationRoughBound_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationMedium_Rough_ratio_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationRough_q_sieve_cost": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_loglog_pow_mul_exp_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_loglog_pow_mul_exp_neg_localizationPower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_localizationSieveLoss_scaled": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationWidth_size": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationPacketDensity_log": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_loglog_linear_sub_log": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_localizationPrimeLower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationPrimeLower_loglog_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationCommon_loglog_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationCommonBand_endpoints": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationCommonBand_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationCommonBand_support_mass": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exp_neg_le_density_quarter": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationCommonBand_tail": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exp_quarter_le_density_floor_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationCommonBand_count_error": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationWidth_le": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_common_nearby_multiple_of_packets": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_divisor_localization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_log_pow_mul_exp_neg_localizationPower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_log_pow_loglog_pow_exp_neg_localizationPower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.localizationRarity_scaled_cost": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_localizationRarity_cost": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_rare_divisor_localization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.card_frequencies_of_residue_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.residue_cover_of_near_multiple": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.card_frequencies_near_multiples": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.nat_lcm_dvd_int": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.divisorPrimePowers_lcm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.lcm_complement_quotient_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.card_localized_frequency_class": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.no_large_frequency_with_full_lcm": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.exp_sub_one_le_mul_exp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.nonempty_powerset_weight_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.frequency_sum_of_classification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_nat_pow_exp_neg_log": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.tendsto_classificationMajorant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.frequency_sum_le_classificationMajorant": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_frequency_sum_of_classification": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_rareDivisorSet_localization": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.bad_residue_energy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.fourierTerm_norm_of_many_bad_groups": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_large_frequency_bound_regular": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_exact_subset_regular_family": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.eventually_complement_regular_family": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.windowDenseExpansions_proved": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.erdos_problem_319": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.erdos_problem_319_limit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Formal.erdos_problem_319_witnesses": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Submission.literalPrimitive_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Submission.literal_maximum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Submission.original_problem_density_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "Erdos319Submission.original_problem_nonempty_witnesses": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_replay_completed": true,
+  "all_listed_checks_passed": true,
+  "scope": "Both submitted modules compiled from source, explicit integer-sign bridges checked, and all listed axiom closures checked. Replay, when requested, checks submitted modules against imported environments; dependencies are pinned and cache may be reused. No independent human review, discovery priority or award eligibility is established.",
+  "checked_git_commit": "ed555ed4120225800a6c642e6ba81704d5ed6b11",
+  "working_tree_status": "",
+  "finished_utc": "2026-10-16T14:38:41.236417+00:00",
+  "redaction": "Only the local absolute executable path is replaced with lake in the public command record. Full local evidence is retained."
+}
